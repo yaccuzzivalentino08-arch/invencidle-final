@@ -1,0 +1,94 @@
+/* footer.css - footer compartido por todas las páginas.
+   Por defecto queda al final de la página (hay que hacer scroll para verlo).
+   Con <body class="footer-arriba"> (index, jugar, iniciar sesión) el footer se apoya
+   en el borde inferior de la ventana y se ve sin hacer scroll. */
+:root { --footer-h: 150px; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  position: relative;
+  box-sizing: border-box;
+  height: auto !important;                           /* que crezca con el contenido */
+  min-height: calc(100vh + var(--footer-h)) !important; /* siempre hay un poco de scroll */
+  padding-bottom: var(--footer-h);                   /* lugar reservado para el footer */
+}
+
+/* Páginas donde el footer tiene que verse sin scrollear */
+body.footer-arriba {
+  min-height: 100vh !important;
+}
+
+.footer-sitio {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--footer-h);
+  box-sizing: border-box;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background-color: #05060f;
+  border-top: 4px solid dodgerblue;
+}
+
+.footer-sitio p { margin: 0; text-align: center; color: white; font-family: "Iosevka Charon", monospace; }
+.footer-sitio .footer-titulo { font-family: "Oswald", sans-serif; font-size: 20px; }
+.footer-sitio .footer-dato { font-size: 15px; }
+.footer-sitio .footer-autores { font-size: 13px; color: dodgerblue; margin-top: 4px; }
+
+/* Links a todas las pestañas */
+.footer-sitio .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 22px;
+  margin: 0 0 8px;
+  padding: 0 0 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* El prefijo .footer-sitio le gana a los a:link / a:hover globales de cada página */
+.footer-sitio .footer-links a:link,
+.footer-sitio .footer-links a:visited {
+  display: inline-block;
+  color: #d2d2d7;
+  font-family: "Iosevka Charon", monospace;
+  font-size: 15px;
+  text-decoration: none;
+  transform: none;
+  transition: color 0.2s ease;
+}
+
+.footer-sitio .footer-links a:hover,
+.footer-sitio .footer-links a:focus-visible {
+  color: yellow;
+  transform: none;
+}
+
+.footer-sitio .footer-links a:active { color: dodgerblue; }
+
+/* Pantallas angostas: los links se acomodan en varias filas, el footer necesita más alto */
+@media (max-width: 640px) {
+  :root { --footer-h: 215px; }
+  .footer-sitio .footer-links { gap: 6px 16px; }
+}
+
+/* Pantallas bajas: se compacta el contenido de las páginas con footer-arriba
+   para que el footer entre sin scroll */
+@media (max-height: 820px) and (min-width: 641px) {
+  body.footer-arriba h1 { font-size: 140px; margin: 12px 0 6px; }
+  body.footer-arriba ul { margin-top: 0; }
+  body.footer-arriba ul a.boton,
+  body.footer-arriba .boton { font-size: 36px; padding: 11px 0; margin-top: 18px; }
+}
+
+@media (max-height: 700px) and (min-width: 641px) {
+  body.footer-arriba h1 { font-size: 140px; margin: 8px 0 4px; }
+  body.footer-arriba ul a.boton,
+  body.footer-arriba .boton { font-size: 30px; padding: 8px 0; margin-top: 12px; }
+}

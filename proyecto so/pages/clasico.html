@@ -1,0 +1,96 @@
+<doctype html>
+    <html long = "es">
+        <head>
+            <link rel="stylesheet" href="../css/clasico.css">
+            <link rel="stylesheet" href="../css/footer.css">
+            <link rel="stylesheet" href="../css/header.css">
+             <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Oswald:wght@200..700&family=Playwrite+GB+S+Guides:ital@0;1&display=swap" rel="stylesheet">
+            <meta charset="UTF-8">
+            <title>INVENCIDLE - Clásico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/titulo.css">
+    <script src="../js/titulo.js" defer></script>
+    <script src="../js/racha.js" defer></script>
+
+        </head>
+        <body>
+            <div class="barra-superior" role="navigation" aria-label="Contacto">
+                <a href="mailto:tucorreo@gmail.com">tucorreo@gmail.com</a>
+                <a href="nosotros.html">Sobre nosotros</a>
+            </div>
+            
+                <h1 class="titulo-sangre"><a href="../index.html"> INVENCIDLE</a></h1>
+                <nav>
+                    <ul>
+                        
+                    </ul>
+                </nav>
+
+                <main class="juego-contenedor">
+                    <h2 class="texto-encima">¿Quién es el personaje de INVENCIBLE de hoy?</h2>
+
+                    <div class="input-container">
+                        <input type="text" id="input-personaje" placeholder="Escribí un personaje..." autocomplete="off">
+                        <ul id="lista-sugerencias" class="sugerencias"></ul>
+                    </div>
+
+                    <p id="contador-intentos">Intentos: 0</p>
+
+                    <!-- Pista opcional: se habilita después de INTENTOS_PARA_PISTA intentos (ver clasico.js) -->
+                    <button type="button" id="caja-pista" class="caja-pista" disabled>
+                        <span id="texto-pista">💡 Pista de colores</span>
+                        <span id="colores-pista" class="colores-pista" hidden></span>
+                    </button>
+                    <p id="mensaje-resultado"></p>
+
+                    <!-- Aparece al ganar: lleva al siguiente modo (Frase) -->
+                    <a id="boton-siguiente" class="boton-siguiente" href="frase.html" hidden>Siguiente modo: Frase &rarr;</a>
+
+                    <div class="tabla-scroll">
+                    <table id="tabla-juego">
+                        <thead>
+                            <tr>
+                                <th>Foto</th>
+                                <th>Personaje</th>
+                                <th>Género</th>
+                                <th>Especie</th>
+                                <th>Planeta de origen</th>
+                                <th>Edad</th>
+                                <th>Altura</th>
+                                <th>Pelo</th>
+                                <th>Habilidades</th>
+                                <th>Temporada</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-tabla"></tbody>
+                    </table>
+                    </div>
+                </main>
+
+                <script src="../js/modo-libre.js"></script>
+                <script src="../js/aleatorio.js"></script>
+                <script src="../js/personajes.js"></script>
+                <script src="../js/clasico.js"></script>
+            
+        <footer class="footer-sitio">
+    <nav class="footer-links" aria-label="Mapa del sitio">
+        <a href="../index.html">Inicio</a>
+        <a href="jugar.html">Jugar</a>
+        <a href="clasico.html">Clásico</a>
+        <a href="frase.html">Frase</a>
+        <a href="como_se_juega.html">Cómo se juega</a>
+        <a href="iniciar_sesion.php">Iniciar sesión</a>
+        <a href="nosotros.html">Sobre nosotros</a>
+    </nav>
+    <p class="footer-titulo">Adivina el personaje de invencible de hoy</p>
+    <p class="footer-dato">Hasta ahora hay 39 personajes</p>
+    <p class="footer-autores">by Yaccuzzi y Saucedo</p>
+</footer>
+</body>

@@ -1,0 +1,138 @@
+/* header.css - barra superior compartida (estilo barra de navegación de Apple).
+   Va por encima del título INVENCIDLE en todas las páginas. */
+.barra-superior {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  padding: 0 16px;
+  background-color: rgba(22, 22, 23, 0.92);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: "Iosevka Charon", monospace;
+  font-size: 13px;
+  line-height: 1;
+  -webkit-text-stroke: 0;   /* por si algún estilo del título se hereda */
+}
+
+/* El prefijo .barra-superior le gana a los a:link / a:hover globales de cada página */
+.barra-superior a:link,
+.barra-superior a:visited {
+  display: inline-block;
+  color: #d2d2d7;
+  font-family: "Iosevka Charon", monospace;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  transform: none;
+  transition: color 0.2s ease;
+}
+
+.barra-superior a:hover,
+.barra-superior a:focus-visible {
+  color: #ffffff;
+  transform: none;
+}
+
+.barra-superior a:active { color: dodgerblue; }
+
+@media (max-width: 520px) {
+  .barra-superior { gap: 20px; }
+  .barra-superior a:link,
+  .barra-superior a:visited { font-size: 12px; }
+}
+
+/* ---------- Racha (🔥 + número) arriba a la derecha ---------- */
+.barra-superior { position: relative; }
+
+.barra-superior .racha {
+  position: absolute;
+  right: 16px;
+  top: 0;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #d2d2d7;
+  font-family: "Iosevka Charon", monospace;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: default;
+  user-select: none;
+}
+.barra-superior .racha[hidden] { display: none; }
+.barra-superior .racha-llama { font-size: 16px; filter: grayscale(1) opacity(0.6); transition: filter 0.3s ease; }
+.barra-superior .racha-activa { color: #ffb347; }
+.barra-superior .racha-activa .racha-llama { filter: none; }
+
+.barra-superior .racha-sube { animation: racha-pop 0.7s ease; }
+@keyframes racha-pop {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 520px) {
+  .barra-superior { padding-right: 60px; justify-content: flex-start; gap: 16px; }
+  .barra-superior .racha { right: 10px; }
+}
+
+/* ---------- Interruptor "Modo libre" arriba a la izquierda (ver js/modo-libre.js) ---------- */
+.barra-superior .interruptor-libre {
+  position: absolute;
+  left: 16px;
+  top: 0;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #d2d2d7;
+  font-family: "Iosevka Charon", monospace;
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.barra-superior .interruptor-libre input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.barra-superior .interruptor-pista {
+  position: relative;
+  width: 34px;
+  height: 18px;
+  border-radius: 9px;
+  background: #555;
+  transition: background 0.2s ease;
+  flex: none;
+}
+.barra-superior .interruptor-pista::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s ease;
+}
+.barra-superior .interruptor-libre input:checked + .interruptor-pista { background: #fff200; }
+.barra-superior .interruptor-libre input:checked + .interruptor-pista::after { transform: translateX(16px); background: #111; }
+.barra-superior .interruptor-libre input:checked ~ .interruptor-texto { color: #fff200; }
+.barra-superior .interruptor-libre input:focus-visible + .interruptor-pista { outline: 2px solid dodgerblue; outline-offset: 2px; }
+
+/* Con el interruptor a la izquierda, los links del centro no deben pisarlo en pantallas angostas */
+@media (max-width: 900px) {
+  .barra-superior:has(.interruptor-libre) { padding-left: 150px; }
+}
+@media (max-width: 520px) {
+  .barra-superior .interruptor-libre { left: 10px; font-size: 11px; gap: 6px; }
+  .barra-superior:has(.interruptor-libre) { padding-left: 132px; }
+}

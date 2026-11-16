@@ -1,0 +1,170 @@
+h1{
+    color:dodgerblue;
+    text-align:center;
+    font-size:170px;
+    -webkit-text-stroke: 2px black; 
+    margin-bottom: 0px;
+    margin-top: 1px;
+  font-weight: 400;
+  font-style: normal;
+      font-family: "Oswald", sans-serif;
+
+a:link {
+    font-family: "Oswald", sans-serif;
+    color:dodgerblue;
+   list-style: none;
+      text-decoration: none;
+transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Enlace ya visitado */
+a:visited {
+       font-family: "Oswald", sans-serif;
+
+  color:dodgerblue;
+   text-decoration: none;
+    list-style: none;
+    transition: transform 0.3s ease;
+  
+
+}
+
+/* Al pasar el ratón por encima */
+a:hover {
+       font-family: "Oswald", sans-serif;
+
+  color:yellow;
+     text-decoration: none;
+transform: scale(1.2);
+}
+
+/* Mientras se hace clic */
+a:active {
+       font-family: "Oswald", sans-serif;
+
+  color:dodgerblue;
+     text-decoration: none;
+
+}
+
+}
+
+
+body {
+    background-image: url('../imagenes/invincible_fondo.webp');/* Ruta de tu imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    margin: 0; /* Elimina los márgenes por defecto del navegador */
+    height: 100vh; /* Asegura que ocupe el 100% de la altura visual */
+}
+
+ul{
+      margin-top:-50px;
+
+        font-size:45px;
+        text-align:center;
+        color:dodgerblue;
+         list-style: none;
+         
+     
+       
+        
+/* Enlace no visitado */
+/*a:link {
+    font-family: "Iosevka Charon", monospace;
+
+    color:dodgerblue;
+   list-style: none;
+      text-decoration: none;
+transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Enlace ya visitado */
+/*a:visited {
+       font-family: "Iosevka Charon", monospace;
+
+  color:dodgerblue;
+   text-decoration: none;
+    list-style: none;
+    transition: transform 0.3s ease;
+  
+
+}
+
+/* Al pasar el ratón por encima */
+/*a:hover {
+       font-family: "Iosevka Charon", monospace;
+
+  color:yellow;
+     text-decoration: none;
+transform: scale(1.2);
+}
+
+/* Mientras se hace clic */
+/*a:active {
+       font-family: "Iosevka Charon", monospace;
+
+  color:dodgerblue;
+     text-decoration: none;
+
+}
+*/
+}
+.boton {
+          text-align:center;
+
+  background-color: dodgerblue; /* Color de fondo */
+  color:yellow;          /* Color del texto */
+  box-sizing: border-box;
+  width: 480px;
+  max-width: 92vw;
+  padding: 15px 0;        /* Espaciado interno */
+  text-decoration: none;     /* Quita el subrayado del enlace */
+  border-radius: 5px;        /* Bordes redondeados */
+   font-weight: bold;
+  font-family: "Iosevka Charon", monospace;   /* Fuente */
+  display: inline-block;     /* Permite ajustar márgenes y tamaño */
+  transition: 0.3s ease;     /* Animación suave */
+   margin-top:50px; 
+   border: 4px solid black; /* Grosor, estilo y color */
+        font-size:45px;
+    
+         list-style: none;
+}
+
+.boton:hover {
+  background-color: dodgerblue; /* Color cuando pasas el mouse por encima */
+   font-family: "Iosevka Charon", monospace;
+  text-decoration: none;
+  transform: scale(1.2);
+  color:yellow;
+}
+
+.boton:active {
+       font-family: "Iosevka Charon", monospace;
+
+  color:yellow;
+     text-decoration: none;
+
+}
+
+
+.texto-secundario {
+  font-size: 13px;
+  font-weight: 400; /* Letra más delgada */
+  color: #ffffff;   /* Color blanco para que contraste y no compita con el amarillo */
+  font-family: sans-serif;
+  text-align:center;
+  display: flex;                /* O 'inline-flex' */
+  flex-direction: column;       /* ¡ESTA LÍNEA BAJA EL TEXTO! */
+  align-items: center;          /* Centra ambos textos horizontalmente */
+  justify-content: center;      /* Centra ambos textos verticalmente */
+  gap: 6px;                     /* Separa el texto de arriba del de abajo */
+  
+  text-decoration: none; 
+
+}

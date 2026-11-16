@@ -1,0 +1,45 @@
+/* titulo.css - título INVENCIDLE con la tipografía de la serie (Shadow of Xizor)
+   y el efecto de sangre de la title card (ver js/titulo.js). */
+@font-face {
+  font-family: "Invincible";
+  src: url("../fonts/invincible.ttf") format("truetype");
+  font-display: swap;
+}
+
+h1.titulo-sangre {
+  position: relative;
+  font-family: "Invincible", "Oswald", sans-serif !important;
+  font-size: 170px !important;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-align: center;
+  -webkit-text-stroke: 0 !important;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* El texto es amarillo (#fff200, como la title card) y deja ver las manchas rojas
+   que dibuja el JS como imagen de fondo recortada con la forma de las letras. */
+h1.titulo-sangre .titulo-texto,
+h1.titulo-sangre a:link,
+h1.titulo-sangre a:visited,
+h1.titulo-sangre a:hover,
+h1.titulo-sangre a:active {
+  display: inline-block;
+  font-family: "Invincible", "Oswald", sans-serif;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-color: #fff200;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration: none;
+  transform: none;
+  filter: drop-shadow(3px 4px 0 #000) drop-shadow(0 0 1px #000);
+  touch-action: manipulation;
+}
+
+@media (max-width: 900px) {
+  h1.titulo-sangre { font-size: clamp(64px, 26vw, 150px) !important; margin-top: 8px !important; }
+}

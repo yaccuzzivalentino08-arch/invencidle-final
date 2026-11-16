@@ -1,0 +1,312 @@
+h1{
+    color:dodgerblue;
+    text-align:center;
+    font-size:120px;
+    -webkit-text-stroke: 2px black; 
+    margin-bottom: 0px;
+    margin-top: 1px;
+  font-weight: 400;
+  font-style: normal;
+      font-family: "Oswald", sans-serif;
+
+a:link {
+    font-family: "Oswald", sans-serif;
+    color:dodgerblue;
+   list-style: none;
+      text-decoration: none;
+transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Enlace ya visitado */
+a:visited {
+       font-family: "Oswald", sans-serif;
+
+  color:dodgerblue;
+   text-decoration: none;
+    list-style: none;
+    transition: transform 0.3s ease;
+  
+
+}
+
+/* Al pasar el ratón por encima */
+a:hover {
+       font-family: "Oswald", sans-serif;
+
+  color:yellow;
+     text-decoration: none;
+transform: scale(1.2);
+}
+
+/* Mientras se hace clic */
+a:active {
+       font-family: "Oswald", sans-serif;
+
+  color:dodgerblue;
+     text-decoration: none;
+
+}
+
+}
+
+
+body {
+    background-image: url('../imagenes/invincible_fondo.webp');/* Ruta de tu imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    margin: 0; /* Elimina los márgenes por defecto del navegador */
+    height: 100vh; /* Asegura que ocupe el 100% de la altura visual */
+}
+/*
+p{
+    font-size:25px;
+    color:white;
+     font-family: "Iosevka Charon", monospace;
+
+    text-align:center;
+}
+
+h2{
+      font-family: "Oswald", sans-serif;
+
+    margin-top:0px;
+    color:white;
+    font-size:35px;
+    text-align:center;
+}*/
+
+.juego-contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 60px 20px;
+    text-align: center;
+}
+
+.texto-encima {
+    font-family: "Oswald", sans-serif;
+    color: white;
+    font-size: 32px;
+    margin-top: 0;
+    text-shadow: 2px 2px 4px black;
+}
+
+.input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+}
+
+#input-personaje {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    font-size: 18px;
+    font-family: "Iosevka Charon", monospace;
+    border: 3px solid dodgerblue;
+    border-radius: 6px;
+    outline: none;
+}
+
+#input-personaje:disabled {
+    background-color: #ddd;
+}
+
+.sugerencias {
+    display: none;
+    list-style: none;
+    margin: 4px 0 0 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 2px solid dodgerblue;
+    border-radius: 6px;
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 10;
+    text-align: left;
+}
+
+.sugerencias.activa {
+    display: block;
+}
+
+.sugerencias li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    font-family: "Iosevka Charon", monospace;
+    color: black;
+    cursor: pointer;
+}
+
+.sugerencias li:hover {
+    background-color: dodgerblue;
+    color: yellow;
+}
+
+/* ===== Fotos de los personajes ===== */
+/* Recuadro chico a la izquierda del nombre, en la lista de sugerencias */
+.foto-sugerencia {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid dodgerblue;
+    background-color: #1b1b2f;
+}
+
+/* Recuadro de foto dentro de la tabla de resultados */
+#tabla-juego td.foto-celda {
+    padding: 6px;
+    background-color: transparent;
+}
+
+.foto-personaje {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid dodgerblue;
+    background-color: #1b1b2f;
+}
+
+#contador-intentos {
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#mensaje-resultado {
+    color: yellow;
+    font-family: "Oswald", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+#tabla-juego {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-family: "Iosevka Charon", monospace;
+    font-size: 14px;
+}
+
+#tabla-juego th {
+    background-color: dodgerblue;
+    color: yellow;
+    padding: 8px 4px;
+    font-family: "Oswald", sans-serif;
+    border: 2px solid black;
+}
+
+#tabla-juego td {
+    padding: 10px 6px;
+    text-align: center;
+    border: 2px solid black;
+    color: white;
+    font-weight: bold;
+}
+
+#tabla-juego td.correcto {
+    background-color: #2e8b2e;
+}
+
+#tabla-juego td.parcial {
+    background-color: #d9770f;
+}
+
+#tabla-juego td.incorrecto {
+    background-color: #b22222;
+}
+
+
+/* ===== Pista de colores (opcional, se habilita tras N intentos) ===== */
+.caja-pista {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto 0 auto;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    background-color: dodgerblue;
+    color: yellow;
+    border: 4px solid black;
+    border-radius: 6px;
+    font-family: "Iosevka Charon", monospace;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.caja-pista:disabled {
+    background-color: #555;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.caja-pista:not(:disabled):not(.revelada):hover {
+    transform: scale(1.05);
+}
+
+.caja-pista.revelada {
+    cursor: default;
+}
+
+.colores-pista {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.colores-pista[hidden] {
+    display: none;
+}
+
+.color-pista {
+    width: 70px;
+    height: 70px;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+/* Sugerencia resaltada con las flechas del teclado (Enter la elige) */
+.sugerencias li.seleccionada {
+  background-color: dodgerblue;
+  color: yellow;
+}
+
+
+/* ===== Botón "Siguiente modo" (aparece al ganar) ===== */
+a.boton-siguiente:link,
+a.boton-siguiente:visited {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 6px auto 16px auto;
+    padding: 12px 28px;
+    background-color: dodgerblue;
+    color: yellow;
+    border: 4px solid black;
+    border-radius: 6px;
+    font-family: "Iosevka Charon", monospace;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+a.boton-siguiente:hover { transform: scale(1.05); color: yellow; }
+a.boton-siguiente[hidden] { display: none; }

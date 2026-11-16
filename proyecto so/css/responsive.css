@@ -1,0 +1,85 @@
+/* responsive.css - ajustes para celulares y tablets.
+   Se carga al final en todas las páginas, así pisa los tamaños fijos de escritorio.
+   En pantallas grandes (más de 900px) no cambia nada. */
+
+img { max-width: 100%; }
+
+/* ---------- Tablets (hasta 900px) ---------- */
+@media (max-width: 900px) {
+  /* iOS no soporta bien el fondo fijo */
+  body { background-attachment: scroll !important; }
+
+  h1 { font-size: clamp(48px, 13vw, 100px) !important; -webkit-text-stroke-width: 1.5px; }
+  h2 { font-size: clamp(24px, 5vw, 35px); }
+
+  ul { margin-top: 0 !important; padding-left: 0; font-size: 32px; }
+  ul a.boton, .boton { font-size: 34px !important; margin-top: 22px !important; }
+
+  .juego-contenedor, .juego-contenedor-frase { padding: 0 14px 50px; }
+  .texto-encima { font-size: 26px; }
+  #texto-frase { font-size: 20px; }
+}
+
+/* ---------- Celulares (hasta 640px) ---------- */
+@media (max-width: 640px) {
+  :root { --footer-h: 215px; }
+
+  h1 { font-size: clamp(38px, 12.5vw, 64px) !important; margin-top: 6px !important; }
+  header nav ul { margin: 0 0 8px; }
+
+  ul a.boton, .boton { font-size: 24px !important; padding: 12px 0 !important; border-width: 3px !important; width: 88vw !important; }
+  .texto-secundario { font-size: 12px; }
+
+  /* En pantallas táctiles no se agranda al tocar (se salía del ancho) */
+  a:hover, ul a.boton:hover, .boton:hover { transform: none !important; }
+
+  .barra-superior { gap: 14px; padding: 0 8px; }
+
+  /* Clásico */
+  .texto-encima { font-size: 22px; }
+  #input-personaje, #input-personaje-frase { font-size: 16px; } /* 16px evita el zoom automático de iOS */
+  .caja-pista { font-size: 14px; padding: 10px 12px; }
+  .color-pista { width: 54px; height: 54px; }
+  #mensaje-resultado, #mensaje-resultado-frase { font-size: 18px; }
+  a.boton-siguiente:link, a.boton-siguiente:visited { width: 100%; font-size: 17px; padding: 12px 10px; }
+
+  /* La tabla del Clásico se desliza hacia los costados */
+  .tabla-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px -14px 0; padding: 0 14px 6px; }
+  #tabla-juego { width: auto; min-width: 780px; font-size: 13px; }
+  #tabla-juego th { padding: 6px 4px; font-size: 13px; }
+  #tabla-juego td { padding: 6px 4px; }
+  .foto-personaje { width: 44px; height: 44px; }
+
+  /* Frase */
+  .caja-frase { padding: 16px 12px; }
+  #texto-frase { font-size: 17px; }
+  .lista-intentos .intento-incorrecto { padding: 6px 8px; gap: 8px; font-size: 14px; }
+
+  /* Cómo se juega: el recuadro con ejemplos se muestra dentro de la tarjeta */
+  .comojuego, .comojuegodos { margin-top: 0 !important; padding: 0 14px; }
+  h3, h5 { font-size: 36px !important; margin-top: 8px !important; }
+  .caracteristicas-grid { grid-template-columns: 1fr; gap: 14px; }
+  .caracteristica { min-height: 0; padding: 16px 14px; }
+  .caracteristica:hover, .caracteristica:focus { transform: none; }
+  .posibilidades { position: static; transform: none; width: auto; max-width: none; margin-top: 12px; }
+  .comojuegodos p { font-size: 18px; }
+
+  /* Login / registro / cuenta */
+  body { padding-left: 12px; padding-right: 12px; }
+  form { max-width: 100%; box-sizing: border-box; }
+  input, button { max-width: 100%; }
+  .tarjeta-cuenta { min-width: 0; width: 100%; box-sizing: border-box; padding: 16px; }
+  body .barra-superior { margin-left: -12px; margin-right: -12px; width: calc(100% + 24px); }
+}
+
+/* ---------- Celulares chicos (hasta 420px) ---------- */
+@media (max-width: 420px) {
+  :root { --footer-h: 250px; }
+  .footer-sitio .footer-titulo { font-size: 17px !important; }
+  .footer-sitio .footer-links a:link, .footer-sitio .footer-links a:visited { font-size: 14px !important; }
+  .barra-superior a:link, .barra-superior a:visited { font-size: 11px; }
+}
+
+@media (max-width: 340px) {
+  :root { --footer-h: 280px; }
+}

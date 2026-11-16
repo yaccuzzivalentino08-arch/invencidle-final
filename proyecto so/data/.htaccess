@@ -1,0 +1,2 @@
+# Nadie debe poder descargar la base de datos desde el navegador (Apache / XAMPP)
+Require all denied
